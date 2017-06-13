@@ -2,10 +2,14 @@
 
 Wraps up [jsdom](https://github.com/tmpvar/jsdom) in a easy-to-use Gulp API that allows for DOM manipulation.
 Doesn't run code, load resources etc.
+Install via [NPM](https://www.npmjs.com/package/gulp-tweakdom) or Yarn.
 
 Usage-
 
 ```js
+const gulp = require('gulp');
+const tweakdom = require('gulp-tweakdom');
+
 gulp.task('html', function() {
   const mutator = document => {
     const title = document.head.querySelector('title');
@@ -14,7 +18,7 @@ gulp.task('html', function() {
     }
   };
   return gulp.src('*.html')
-      .pipe(mutateHTML(mutator))
+      .pipe(tweakdom(mutator))
       .pipe(gulp.dest('./dist'));
 })
 ```
