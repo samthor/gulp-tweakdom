@@ -20,7 +20,7 @@ gulp.task('html', function() {
 ```
 
 If you return a node from the mutator function, its `.innerHTML` will be used for output.
-This can be useful if you're manipulating a HTML partial, as jsdom will automatically insert `<head>`, `<body>` etc.
+This can be useful if you're manipulating a HTML partial, as jsdom will otherwise add `<head>`, `<body>` etc.
 
 For example, to modify this patial-
 
@@ -30,11 +30,11 @@ For example, to modify this patial-
 </div>
 ```
 
-Use a mutator that returns `document.body`-
+Use a mutator that returns `document.body`, as jsdom parses the partial there-
 
-```
+```js
 function mutator(document) {
-  document.getElementById('foo').textContent = 'I\'m a partial';
+  document.getElementById('foo').textContent = 'Hooray, partial';
   return document.body;
 }
 ```
