@@ -23,8 +23,8 @@ gulp.task('html', function() {
 })
 ```
 
-If you return a node from the mutator function, its `.innerHTML` will be used for output.
-This can be useful if you're manipulating a HTML partial, as jsdom will otherwise add `<head>`, `<body>` etc.
+If you return a node from the mutator function, its `.innerHTML` will be used for output instead of the whole document.
+This can be useful if you're manipulating a HTML partial, as jsdom will otherwise assume `<head>`, `<body>` etc.
 
 For example, to modify this patial-
 
