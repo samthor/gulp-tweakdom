@@ -1,0 +1,26 @@
+{
+  "name": "gulp-tweakdom",
+  "version": "1.0.0",
+  "description": "DOM manipulation in Gulp",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samthor/gulp-tweakdom.git"
+  },
+  "keywords": [
+    "gulp-plugin",
+    "gulp",
+    "dom"
+  ],
+  "author": "Sam Thorogood <sam.thorogood@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/samthor/gulp-tweakdom/issues"
+  },
+  "homepage": "https://github.com/samthor/gulp-tweakdom#readme",
+  "dependencies": {
+    "jsdom": "^11.0.0",
+    "plugin-error": "^0.1.2",
+    "through2": "^2.0.3"
+  }
+}
