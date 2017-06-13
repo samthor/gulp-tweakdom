@@ -21,7 +21,7 @@ const parser = new (require('jsdom/lib/jsdom/living')).DOMParser();
 const through2 = require('through2');
 const PluginError = require('plugin-error');
 
-const mutateHTML = function(mutator) {
+module.exports = function(mutator) {
   return through2.obj(function(file, enc, cb) {
     if (file.isNull() || !file.path.match(/\.html$/)) {
       return stream.push(file);
