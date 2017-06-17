@@ -1,6 +1,6 @@
 {
   "name": "gulp-tweakdom",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "DOM manipulation in Gulp",
   "main": "index.js",
   "repository": {

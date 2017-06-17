@@ -34,7 +34,7 @@ module.exports = function(mutator) {
       const doc = parser.parseFromString(src, 'text/html');
 
       // if the mutator returns a Node, use its innerHTML: otherwise, the whole doc.
-      const out = mutator(doc);
+      const out = mutator(doc, file.path);
       const s = out ? out.innerHTML : domToHtml([doc]);
 
       file.contents = new Buffer(s);

@@ -11,7 +11,7 @@ const gulp = require('gulp');
 const tweakdom = require('gulp-tweakdom');
 
 gulp.task('html', function() {
-  const mutator = document => {
+  const mutator = (document, fpath) => {
     const title = document.head.querySelector('title');
     if (title) {
       title.textContent = 'A New Title';
