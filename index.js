@@ -16,10 +16,11 @@
 
 'use strict';
 
-const domToHtml = require('jsdom/lib/jsdom/browser/domtohtml').domToHtml;
+const parse5 = require('parse5');
 const parser = new (require('jsdom/lib/jsdom/living')).DOMParser();
-const through2 = require('through2');
 const PluginError = require('plugin-error');
+const through2 = require('through2');
+const treeAdapter = require('./adapter.js');
 
 module.exports = function(mutator) {
   return through2.obj(function(file, enc, cb) {
@@ -35,7 +36,7 @@ module.exports = function(mutator) {
 
       // if the mutator returns a Node, use its innerHTML: otherwise, the whole doc.
       const out = mutator(doc, file.path);
-      const s = out ? out.innerHTML : domToHtml([doc]);
+      const s = out ? out.innerHTML : parse5.serialize(doc, {treeAdapter});
 
       file.contents = new Buffer(s);
     } catch (e) {
